@@ -1,5 +1,5 @@
 import math
-
+import time
 class Tupla:
     def __init__(self, chave, valor):
         self.chave = chave 
@@ -226,11 +226,14 @@ if __name__ == "__main__":
         print("-" * 30)
 
         # 5. Fazer buscas
-        palavra_a_buscar = "apple" # Mude para qualquer palavra que você espera que esteja no arquivo
+        palavra_a_buscar = "Apple" # Mude para qualquer palavra que você espera que esteja no arquivo
         
         # Busca com Table Scan
         print(f"Buscando '{palavra_a_buscar}' com Table Scan...")
+        inicio = time.time()
         resultado_scan, custo_scan = tabela.table_scan(palavra_a_buscar)
+        fim = time.time()
+        print(f"  Tempo de Busca: {fim - inicio:.6f} segundos")
         if resultado_scan:
             print(f"  Encontrado: {resultado_scan}")
             print(f"  Custo (páginas lidas): {custo_scan}")
@@ -240,11 +243,15 @@ if __name__ == "__main__":
 
         # Busca com Índice Hash
         print(f"Buscando '{palavra_a_buscar}' com Índice Hash...")
+        inicio = time.time()
         resultado_hash, custo_hash, pag_id = indice_hash.buscar(palavra_a_buscar, tabela)
+        fim = time.time()
+        print(f"  Tempo de Busca: {fim - inicio:.6f} segundos")
         if resultado_hash:
             print(f"  Encontrado: {resultado_hash}")
             print(f"  Localizado na Página ID: {pag_id}")
             print(f"  Custo (páginas lidas): {custo_hash}")
+        
         else:
             print(f"  Não encontrado. Custo (páginas verificadas): {custo_hash}")
         print("-" * 30)
