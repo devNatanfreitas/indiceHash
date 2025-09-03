@@ -147,4 +147,4 @@ class Hash:
                 if tupla.valor == valor:
                     resultado.append(tupla)
 
-        return resultado
+        return resultado, custo
