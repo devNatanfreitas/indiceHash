@@ -3,8 +3,10 @@ import time
 
 from obj.hash import Hash
 from obj.table import Table
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app, resources={r"/*": {"origins": "*"}})  # libera para todas as origens
 
 # Variáveis globais para armazenar o estado (tabela e índice)
 tabela = None
@@ -76,10 +78,18 @@ def search_scan(palavra):
     resultado_scan, custo_scan = tabela.table_scan(palavra)
     fim = time.time()
 
+    # Converter resultado para formato serializável (assumindo que Tupla tem atributos chave e dados)
+    resultado_serializado = None
+    if resultado_scan:
+        resultado_serializado = {
+            "chave": resultado_scan.chave,  # Ajuste conforme os atributos reais da classe Tupla
+            "dados": resultado_scan.valor   # Ajuste conforme os atributos reais da classe Tupla
+        }
+
     response = {
         "tempo_busca": f"{fim - inicio:.6f} segundos",
         "encontrado": resultado_scan is not None,
-        "resultado": resultado_scan,
+        "resultado": resultado_serializado,
         "custo": custo_scan
     }
     return jsonify(response), 200
@@ -98,10 +108,18 @@ def search_hash(palavra):
     resultado_hash, custo_hash, pag_id = indice_hash.buscar(palavra, tabela)
     fim = time.time()
 
+    # Converter resultado para formato serializável (assumindo que Tupla tem atributos chave e dados)
+    resultado_serializado = None
+    if resultado_hash:
+        resultado_serializado = {
+            "chave": resultado_hash.chave,  # Ajuste conforme os atributos reais da classe Tupla
+            "dados": resultado_hash.valor   # Ajuste conforme os atributos reais da classe Tupla
+        }
+
     response = {
         "tempo_busca": f"{fim - inicio:.6f} segundos",
         "encontrado": resultado_hash is not None,
-        "resultado": resultado_hash,
+        "resultado": resultado_serializado,
         "pagina_id": pag_id,
         "custo": custo_hash
     }

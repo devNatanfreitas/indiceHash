@@ -1,9 +1,22 @@
-## 🚀 Como iniciar o servidor Flask
+## 🚀 Iniciando o Projeto
 
-Execute o comando abaixo no terminal para iniciar a API:
+Para rodar o projeto, você pode iniciar o frontend (Next.js) e o backend (Flask) de forma integrada ou manualmente. A integração é recomendada para desenvolvimento, pois executa ambos simultaneamente.
 
-```bash
-flask --app api run
+### Opção 1: Início Integrado (Recomendado)
+1. Navegue para a pasta `front`.
+2. Instale as dependências: `npm install`.
+3. Inicie o modo de desenvolvimento: `npm run dev` (roda Next.js com Turbopack e o Flask na pasta pai `../`).
+4. Ou, para produção: `npm run build` seguido de `npm run start` (compila e roda Next.js com o Flask).
+
+Isso usa os scripts do `package.json` para executar ambos em paralelo via `concurrently`:
+
+```json
+"scripts": {
+  "dev": "concurrently \"next dev --turbopack\" \"(cd ../ && flask --app api run)\"",
+  "build": "next build --turbopack",
+  "start": "concurrently \"next start\" \"(cd ../ && flask --app api run)\"",
+  "lint": "eslint"
+}
 ```
 
 ## 📋 Requisitos Principais

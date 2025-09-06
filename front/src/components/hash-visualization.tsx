@@ -105,7 +105,9 @@ export function HashVisualization({ tableData, statistics, isIndexBuilt }: HashV
             <div className="space-y-4">
               <div className="flex flex-wrap gap-2">
                 <Badge variant="outline">Buckets: {statistics.total_buckets}</Badge>
-                <Badge variant="outline">Fator de Carga: {statistics.fator_carga.toFixed(2)}</Badge>
+                <Badge variant="outline">
+                  Fator de Carga: {statistics.fator_carga ? statistics.fator_carga.toFixed(2) : 'N/A'}
+                </Badge>
                 <Badge
                   variant="outline"
                   className={statistics.taxa_colisoes > 0.1 ? "bg-red-100 text-red-800" : "bg-green-100 text-green-800"}
