@@ -1,3 +1,11 @@
+## 🚀 Como iniciar o servidor Flask
+
+Execute o comando abaixo no terminal para iniciar a API:
+
+```bash
+flask --app api run
+```
+
 ## 📋 Requisitos Principais
 
 ### ✅ 1. Interface Gráfica (1,0 ponto)
