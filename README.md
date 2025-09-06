@@ -11,15 +11,15 @@
 ### ✅ 2. Funcionalidades Principais
 
 #### 2.1 Construção do Índice
-- [ ] Implementar carregamento do arquivo de dados
-- [ ] Dividir dados em páginas conforme tamanho especificado
-- [ ] Criar buckets com base no cálculo NB
-- [ ] Aplicar função hash para mapear chaves
+- [X] Implementar carregamento do arquivo de dados
+- [X] Dividir dados em páginas conforme tamanho especificado
+- [X] Criar buckets com base no cálculo NB
+- [X] Aplicar função hash para mapear chaves
 
 #### 2.2 Busca por Tupla
-- [ ] Implementar busca usando índice construído
-- [ ] Aplicar função hash na chave fornecida
-- [ ] Localizar e ler página correspondente
+- [X] Implementar busca usando índice construído
+- [X] Aplicar função hash na chave fornecida
+- [X] Localizar e ler página correspondente
 - [ ] Exibir resultado na interface
 
 #### 2.3 Table Scan
@@ -31,133 +31,133 @@
 ### ✅ 3. Entidades/Estruturas (POO)
 
 #### 3.1 Classe Tupla
-- [ ] Implementar representação de linha da tabela
-- [ ] Incluir valor da chave de busca
-- [ ] Incluir dados da linha
+- [X] Implementar representação de linha da tabela
+- [X] Incluir valor da chave de busca
+- [X] Incluir dados da linha
 
 #### 3.2 Classe Tabela (1,5 pontos)
-- [ ] Implementar container para todas as tuplas
-- [ ] Carregar dados do arquivo
-- [ ] Organizar tuplas em estrutura adequada
+- [X] Implementar container para todas as tuplas
+- [X] Carregar dados do arquivo
+- [X] Organizar tuplas em estrutura adequada
 
 #### 3.3 Classe Página (1,0 + 1,0 pontos)
-- [ ] Implementar entrada para tamanho da página
-- [ ] Calcular quantidade de páginas necessárias
-- [ ] Representar divisão física da tabela
-- [ ] Gerenciar alocação de tuplas por página
+- [X] Implementar entrada para tamanho da página
+- [X] Calcular quantidade de páginas necessárias
+- [X] Representar divisão física da tabela
+- [X] Gerenciar alocação de tuplas por página
 
 #### 3.4 Classe Bucket (0,5 pontos)
-- [ ] Implementar mapeamento chave → endereço da página
-- [ ] Calcular quantidade de buckets (NB > NR/FR)
-- [ ] Definir tamanho dos buckets (FR)
+- [X] Implementar mapeamento chave → endereço da página
+- [X] Calcular quantidade de buckets (NB > NR/FR)
+- [X] Definir tamanho dos buckets (FR)
 
 #### 3.5 Função Hash (1,0 ponto)
-- [ ] Projetar e implementar função hash
-- [ ] Mapear chave de busca → endereço do bucket
-- [ ] Documentar escolha da função
+- [X] Projetar e implementar função hash
+- [X] Mapear chave de busca → endereço do bucket
+- [X] Documentar escolha da função
 
 ### ✅ 4. Parâmetros de Configuração
 
 #### 4.1 Arquivo de Dados
-- [ ] Usar arquivo com 466 mil palavras em inglês
-- [ ] Source: https://github.com/dwyl/english-words
-- [ ] Processar uma palavra por linha como chave única
+- [X] Usar arquivo com 466 mil palavras em inglês
+- [X] Source: https://github.com/dwyl/english-words
+- [X] Processar uma palavra por linha como chave única
 
 #### 4.2 Configurações Dinâmicas
-- [ ] Tamanho da página (entrada do usuário)
-- [ ] Número de buckets (calculado: NB > NR/FR)
-- [ ] Tamanho dos buckets (FR)
-- [ ] Campo para chave de busca
+- [x] Tamanho da página (entrada do usuário)
+- [x] Número de buckets (calculado: NB > NR/FR)
+- [x] Tamanho dos buckets (FR)
+- [x] Campo para chave de busca
 
 ### ✅ 5. Tratamento de Problemas
 
 #### 5.1 Resolução de Colisões
-- [ ] Implementar algoritmo para tratar colisões
-- [ ] Calcular taxa de colisões (0,5 pontos)
-- [ ] Exibir estatística na interface
+- [x] Implementar algoritmo para tratar colisões
+- [x] Calcular taxa de colisões (0,5 pontos)
+- [x] Exibir estatística na interface
 
 #### 5.2 Overflow de Buckets
-- [ ] Implementar algoritmo para resolver overflow
-- [ ] Calcular taxa de overflows (0,5 pontos)
-- [ ] Exibir estatística na interface
+- [x] Implementar algoritmo para resolver overflow
+- [x] Calcular taxa de overflows (0,5 pontos)
+- [x] Exibir estatística na interface
 
 ### ✅ 6. Funcionalidades de Pesquisa (2,0 pontos)
-- [ ] Implementar busca por chave usando índice
-- [ ] Retornar tupla e número da página
-- [ ] Calcular e mostrar custo (acessos a disco)
-- [ ] Validar funcionamento completo
+- [x] Implementar busca por chave usando índice
+- [x] Retornar tupla e número da página
+- [x] Calcular e mostrar custo (acessos a disco)
+- [x] Validar funcionamento completo
 
 ### ✅ 7. Estatísticas e Métricas (0,5 pontos)
-- [ ] Calcular estimativa de custo para busca indexada
-- [ ] Calcular custo do table scan (páginas lidas)
-- [ ] Exibir todas as métricas na interface
-- [ ] Comparar eficiência entre métodos
+- [x] Calcular estimativa de custo para busca indexada
+- [x] Calcular custo do table scan (páginas lidas)
+- [x] Exibir todas as métricas na interface
+- [x] Comparar eficiência entre métodos
 
 ### ✅ 8. Table Scan Completo (0,5 pontos)
-- [ ] Implementar percurso sequencial
-- [ ] Mostrar progresso na interface
-- [ ] Calcular custo total
-- [ ] Comparar com busca indexada
+- [x] Implementar percurso sequencial
+- [x] Mostrar progresso na interface
+- [x] Calcular custo total
+- [x] Comparar com busca indexada
 
 ## 🔄 Fluxo de Funcionamento
 
 ### Etapa 1: Preparação
-- [ ] Carregar arquivo de dados em memória
-- [ ] Dividir linhas em páginas conforme tamanho
+- [x] Carregar arquivo de dados em memória
+- [x] Dividir linhas em páginas conforme tamanho
 
 ### Etapa 2: Construção do Índice
-- [ ] Criar NB buckets de tamanho FR
-- [ ] Aplicar função hash em cada tupla
-- [ ] Armazenar mapeamento chave → endereço da página
+- [x] Criar NB buckets de tamanho FR
+- [x] Aplicar função hash em cada tupla
+- [x] Armazenar mapeamento chave → endereço da página
 
 ### Etapa 3: Busca
-- [ ] Receber chave de busca do usuário
-- [ ] Aplicar função hash para encontrar página
-- [ ] Ler página e buscar tupla
-- [ ] Exibir resultado e custo
+- [x] Receber chave de busca do usuário
+- [x] Aplicar função hash para encontrar página
+- [x] Ler página e buscar tupla
+- [x] Exibir resultado e custo
 
 ### Etapa 4: Table Scan
-- [ ] Ativar botão após entrada da chave
-- [ ] Percorrer páginas sequencialmente
-- [ ] Mostrar progresso até encontrar chave
-- [ ] Exibir custo total do scan
+- [x] Ativar botão após entrada da chave
+- [x] Percorrer páginas sequencialmente
+- [x] Mostrar progresso até encontrar chave
+- [x] Exibir custo total do scan
 
 ## 📊 Critérios de Avaliação
 
 | Critério | Pontos | Status |
 |----------|---------|---------|
 | Interface gráfica | 1,0 | [ ] |
-| Carga de dados nas páginas | 1,5 | [ ] |
-| Entrada para tamanho da página | 1,0 | [ ] |
-| Cálculo da quantidade de páginas | 1,0 | [ ] |
-| Função hash | 1,0 | [ ] |
-| Cálculo da quantidade de buckets | 0,5 | [ ] |
-| Funcionamento com pesquisa | 2,0 | [ ] |
-| Taxa de colisões | 0,5 | [ ] |
-| Taxa de overflows | 0,5 | [ ] |
-| Table scan | 0,5 | [ ] |
-| Estimativa de custo | 0,5 | [ ] |
-| **TOTAL** | **10,0** | |
+| Carga de dados nas páginas | 1,5 | [x] |
+| Entrada para tamanho da página | 1,0 | [x] |
+| Cálculo da quantidade de páginas | 1,0 | [x] |
+| Função hash | 1,0 | [x] |
+| Cálculo da quantidade de buckets | 0,5 | [x] |
+| Funcionamento com pesquisa | 2,0 | [x] |
+| Taxa de colisões | 0,5 | [x] |
+| Taxa de overflows | 0,5 | [x] |
+| Table scan | 0,5 | [x] |
+| Estimativa de custo | 0,5 | [x] |
+| **TOTAL** | **10,0** | 9,0 (falta interface) |
 
 ## 🚀 Próximos Passos
 
 ### Sprint 1: Estruturas Básicas
-- [ ] Definir arquitetura do projeto
-- [ ] Implementar classes básicas (Tupla, Página, Bucket)
-- [ ] Criar interface gráfica inicial
+- [x] Definir arquitetura do projeto
+- [x] Implementar classes básicas (Tupla, Página, Bucket)
+- [x] Criar interface gráfica inicial
 
 ### Sprint 2: Core do Sistema
-- [ ] Implementar função hash
-- [ ] Desenvolver carregamento de dados
-- [ ] Construir índice hash
+- [x] Implementar função hash
+- [x] Desenvolver carregamento de dados
+- [x] Construir índice hash
 
 ### Sprint 3: Funcionalidades de Busca
-- [ ] Implementar busca indexada
-- [ ] Desenvolver table scan
-- [ ] Calcular estatísticas
+- [x] Implementar busca indexada
+- [x] Desenvolver table scan
+- [x] Calcular estatísticas
 
 ### Sprint 4: Refinamentos
-- [ ] Tratar colisões e overflows
+- [x] Tratar colisões e overflows
 - [ ] Finalizar interface
 - [ ] Preparar apresentação
 
